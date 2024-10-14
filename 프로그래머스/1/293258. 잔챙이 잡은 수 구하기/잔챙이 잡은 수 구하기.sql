@@ -3,4 +3,4 @@ SELECT
     COUNT(*) AS FISH_COUNT
 FROM FISH_INFO
 WHERE
-    LENGTH <= 10 OR LENGTH is null;
+    LENGTH is null;

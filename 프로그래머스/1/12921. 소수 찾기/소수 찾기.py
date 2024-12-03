@@ -1,9 +1,9 @@
 def solution(n):
     answer = 0
-    li = [1 for _ in range(1000001)]
-    for i in range(2, 500000):
-        for j in range(2, 500000):
-            if i*j > 1000000:
+    li = [1 for _ in range(n+1)]
+    for i in range(2, n//2+1):
+        for j in range(2, n//2+1):
+            if i*j > n:
                 break
             if li[i*j] == 1:
                 li[i*j] = 0

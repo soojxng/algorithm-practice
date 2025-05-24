@@ -1,0 +1,25 @@
+def cal(arr, b):
+    if b == 1:
+        return [[x % 1000 for x in a] for a in arr]
+    tmp = cal(arr, b//2)
+    ans = mul(tmp, tmp)
+    if b % 2 == 1:
+        ans = mul(ans, arr) 
+    return ans
+
+def mul(arr, arr2):
+    N = len(arr)
+    tmp = [[0]*N for _ in range(N)]
+    for i in range(N):
+        for j in range(N):
+            for k in range(N):
+                tmp[i][j] += arr[i][k] * arr2[k][j]
+            tmp[i][j] %= 1000
+    return tmp
+    
+N, B = map(int, input().split())
+A = [list(map(int, input().split())) for _ in range(N)]
+C = cal(A, B)
+
+for c in C:
+    print(' '.join(map(str, c)))

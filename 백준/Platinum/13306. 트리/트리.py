@@ -1,10 +1,11 @@
 import sys
+sys.setrecursionlimit(10**6)
 input = sys.stdin.readline
 
 def find(v):
-    while parents[v] != v:
-        v = parents[v]
-    return v
+    if v != parents[v]:
+        parents[v] = find(parents[v])
+    return parents[v]
 
 def union(a, b):
     pa = find(a)

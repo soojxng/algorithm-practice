@@ -29,7 +29,7 @@ for i in range(len(s)):
         elif w[j] == 'y' and j < n-1 and w[j+1] != 'y' and w[j+1] in vowel:
             c += 1
         elif j == n-1 and w[j] == 'e' and j != 0 and w[j-1] == 'l' and c >= 2:
-            c += 1
+            cnt += 1
         elif j == n-1 and w[j] == 'e':
             break
         elif j == n-2 and w[j] == 'e' and w[j+1] == 's':
